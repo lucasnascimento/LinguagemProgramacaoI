@@ -4,8 +4,8 @@
 package br.com.reges.alunos;
 
 /**
- * Classe que modela um aluno no aspecto de suas notas dentro de um sistema
- * Academico
+ * Classe que modela um aluno de Ensino Fundamental no aspecto de sua nota
+ * dentro de um sistema Academico
  * 
  * @author Lucas Nascimento
  *
@@ -13,83 +13,51 @@ package br.com.reges.alunos;
 public class Aluno {
 
 	/**
-	 * Nota da prova do primeiro bimestre deve ser entre 0 e 7
-	 */
-	Double notaProvaPrimeiroBimestre = 0.0;
-	/**
-	 * Nota da prova do segundo bimestre deve ser entre 0 e 7
-	 */
-	Double notaProvaSegundoBimestre = 0.0;
-	/**
-	 * Nota do trabalho do primeiro bimestre deve ser entre 0 e 3
-	 */
-	Double notaTrabalhoPrimeiroBimstre = 0.0;
-	/**
-	 * Nota do trabalho do segundo bimestre deve ser entre 0 e 3
-	 */
-	Double notaTrabalhoSegundoBimestre = 0.0;
-	/**
 	 * Nome do Aluno
 	 */
 	String nome = "";
+	
 	/**
 	 * Sobrenome do Aluno
 	 */
 	String sobrenome = "";
+	
+	/**
+	 * Nota Prova deve ser um valor entre 0 e 10
+	 */
+	Double notaProva;
 
 	/**
-	 * Calcula a nota total do primeiro bimestre
-	 * 
-	 * @return Valor da nota total do primeiro bimestre prova mais trabalho
+	 * Construtor padrão
 	 */
-	Double calcularNotaPrimeiroBimestre() {
-		return notaProvaPrimeiroBimestre + notaTrabalhoPrimeiroBimstre;
+	public Aluno() {
+
 	}
 
 	/**
-	 * Calcula a nota total do segundo bimestre
+	 * Construtor recebendo os campos
 	 * 
-	 * @return Valor da nota total do segundo bimestre prova mais trabalho
-	 */	
-	Double calcularNotaSegundoBimestre() {
-		return notaProvaSegundoBimestre + notaTrabalhoSegundoBimestre;
+	 * @param nome
+	 * @param sobrenome
+	 */
+	public Aluno(String nome, String sobrenome) {
+		super();
+		this.nome = nome;
+		this.sobrenome = sobrenome;
 	}
 
 	/**
-	 * Calcula a média total do semestre
+	 * Retorna o resultado do aluno
 	 * 
-	 * @return Valor média total do primeiro bimestre prova mais trabalho
+	 * @return "APROVADO" caso nota maior ou igual a 5
+	 *         <p>
+	 *         "REPROVADO" caso média menor que 5
 	 */
-	Double calcularMediaSemestre() {
-		return (calcularNotaPrimeiroBimestre() + calcularNotaSegundoBimestre()) / 2;
-	}
-
-	/**
-	 * Imprime a mensagem final de resultado do aluno
-	 * 
-	 * @return
-	 */
-	String imprimeResultadoAluno() {
-		return "A media final do aluno " + nome + " " + sobrenome + " e: "
-				+ calcularMediaSemestre() + " - Portanto você esta: "
-				+ calcularMensagemFinal();
-	}
-
-	/**
-	 * Calcula o texto final sobre a média do aluno
-	 * 
-	 * @return "Aprovado" caso média maior ou igual a 7 <p> "Exame" caso média entre 5 e 6,9 <p> "Reprovado" caso média menor que 5 
-	 */
-	String calcularMensagemFinal() {
-
-		if (calcularMediaSemestre() < 5.0) {
-			return " Reprovado :( ";
-		} else if ((calcularMediaSemestre() >= 5.0)
-				&& (calcularMediaSemestre() < 7.0)) {
-			return " Exame :O ";
+	public String resultado() {
+		if (notaProva < 5.0) {
+			return "REPROVADO";
 		} else {
-			return " Aprovado :)";
+			return "APROVADO";
 		}
 	}
-
 }

@@ -8,37 +8,31 @@ package br.com.reges.alunos;
  */
 public class AlunoTeste {
 
+	/**
+	 * Método principal a ser chamado na hora de terstarmos nossa implementação
+	 * 
+	 * @param args Argumentos da linha de comando
+	 */
 	public static void main(String[] args) {
 		
 		//Testando um Aluno que seria reprovado
-		Aluno alunoReprovado = new Aluno();
-		alunoReprovado.nome = "Aluno";
-		alunoReprovado.sobrenome = "Reprovado";
-		alunoReprovado.notaProvaPrimeiroBimestre = 2.0;
-		alunoReprovado.notaTrabalhoPrimeiroBimstre = 2.0;
-		alunoReprovado.notaProvaSegundoBimestre = 2.0;
-		alunoReprovado.notaTrabalhoSegundoBimestre = 2.0;
-		System.out.println(alunoReprovado.imprimeResultadoAluno());
+		Aluno aluno = new Aluno("Aluno", "Ensino Fundamental");
+		aluno.notaProva = 5.5;
+		System.out.println(aluno.resultado());
 
 		//Testando um Aluno que iria para Exame
-		Aluno alunoExame = new Aluno();
-		alunoExame.nome = "Aluno";
-		alunoExame.sobrenome = "Exame";
-		alunoExame.notaProvaPrimeiroBimestre = 2.0;
-		alunoExame.notaTrabalhoPrimeiroBimstre = 3.0;
-		alunoExame.notaProvaSegundoBimestre = 2.0;
-		alunoExame.notaTrabalhoSegundoBimestre = 3.0;
-		System.out.println(alunoExame.imprimeResultadoAluno());
+		AlunoDeGraduacao alunoGraduacao = new AlunoDeGraduacao("Aluno","Graduação");
+		alunoGraduacao.notaProva = 2.0;
+		alunoGraduacao.notaTrabalhoPrimeiroBimstre = 3.0;
+		alunoGraduacao.notaProvaSegundoBimestre = 2.0;
+		alunoGraduacao.notaTrabalhoSegundoBimestre = 3.0;
+		System.out.println(alunoGraduacao.resultado());
 
 		//Testando um Aluno que seria aprovado
-		Aluno alunoAprovado = new Aluno();
-		alunoAprovado.nome = "Aluno";
-		alunoAprovado.sobrenome = "Aprovado";
-		alunoAprovado.notaProvaPrimeiroBimestre = 5.0;
-		alunoAprovado.notaTrabalhoPrimeiroBimstre = 2.0;
-		alunoAprovado.notaProvaSegundoBimestre = 5.0;
-		alunoAprovado.notaTrabalhoSegundoBimestre = 2.0;
-		System.out.println(alunoAprovado.imprimeResultadoAluno());
+		AlunoDePosGraduacao alunoPosGraduacao = new AlunoDePosGraduacao("Aluno","PosGraduação");
+		alunoPosGraduacao.notaProva = 5.0;
+		alunoPosGraduacao.notaTrabalho = 2.0;
+		System.out.println(alunoPosGraduacao.resultado());
 
 	}
 
