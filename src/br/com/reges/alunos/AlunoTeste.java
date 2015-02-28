@@ -14,34 +14,32 @@ public class AlunoTeste {
 	 * @param args Argumentos da linha de comando
 	 */
 	public static void main(String[] args) {
-		
-		//Testando um Aluno que seria reprovado
-		Aluno aluno = new Aluno("Aluno", "Ensino Fundamental");
-		aluno.notaProva = 5.5;
-		System.out.println(aluno.resultado());
-
-		//Testando um Aluno que iria para Exame
-		AlunoDeGraduacao alunoGraduacao = new AlunoDeGraduacao("Aluno","Graduação");
-		alunoGraduacao.notaProva = 2.0;
-		alunoGraduacao.notaTrabalhoPrimeiroBimstre = 3.0;
-		alunoGraduacao.notaProvaSegundoBimestre = 2.0;
-		alunoGraduacao.notaTrabalhoSegundoBimestre = 3.0;
-		System.out.println(alunoGraduacao.resultado());
-
-		//Testando um Aluno que seria aprovado
-		AlunoDePosGraduacao alunoPosGraduacao = new AlunoDePosGraduacao("Aluno","PosGraduação");
-		alunoPosGraduacao.notaProva = 5.0;
-		alunoPosGraduacao.notaTrabalho = 2.0;
-		System.out.println(alunoPosGraduacao.resultado());
-		
+//		
+//		//Testando um Aluno que seria reprovado
+//		Aluno aluno = new Aluno("Aluno", "Ensino Fundamental");
+//		aluno.notaProva = 5.5;
+//		System.out.println(aluno.resultado());
+//
+//		//Testando um Aluno que iria para Exame
+//		AlunoDeGraduacao alunoGraduacao = new AlunoDeGraduacao("Aluno","Graduação");
+//		alunoGraduacao.notaProva = 2.0;
+//		alunoGraduacao.notaTrabalhoPrimeiroBimstre = 3.0;
+//		alunoGraduacao.notaProvaSegundoBimestre = 2.0;
+//		alunoGraduacao.notaTrabalhoSegundoBimestre = 3.0;
+//		System.out.println(alunoGraduacao.resultado());
+//
+//		//Testando um Aluno que seria aprovado
+//		AlunoDePosGraduacao alunoPosGraduacao = new AlunoDePosGraduacao("Aluno","PosGraduação");
+//		alunoPosGraduacao.notaProva = 5.0;
+//		alunoPosGraduacao.notaTrabalho = 2.0;
+//		System.out.println(alunoPosGraduacao.resultado());
+//		
 		
 		//Testando um Aluno de Graduação
-		AlunoDeGraduacaoSemTrabalho alunoGraduacao2 = new AlunoDeGraduacaoSemTrabalho("Aluno","Gradução Sem Trabalho");
-		alunoGraduacao2.notaProva = 6.0;
-		alunoGraduacao2.notaProvaSegundoBimestre = 8.0;
-		System.out.println(alunoGraduacao2.resultado());
-		
-
+AlunoDeGraduacaoSemTrabalho lucas = new AlunoDeGraduacaoSemTrabalho();		
+lucas.notaProva = 5.0;
+lucas.notaProvaSegundoBimestre = 5.0;
+System.out.println(lucas.resultado());
 	}
 
 }
