@@ -33,6 +33,14 @@ public class AlunoTeste {
 		alunoPosGraduacao.notaProva = 5.0;
 		alunoPosGraduacao.notaTrabalho = 2.0;
 		System.out.println(alunoPosGraduacao.resultado());
+		
+		
+		//Testando um Aluno de Graduação
+		AlunoDeGraduacaoSemTrabalho alunoGraduacao2 = new AlunoDeGraduacaoSemTrabalho("Aluno","Gradução Sem Trabalho");
+		alunoGraduacao2.notaProva = 6.0;
+		alunoGraduacao2.notaProvaSegundoBimestre = 8.0;
+		System.out.println(alunoGraduacao2.resultado());
+		
 
 	}
 
