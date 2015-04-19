@@ -1,21 +1,24 @@
 package br.com.reges.tratamentodeexcecoes;
 
 public class Conta {
-	
+
 	private double saldo;
 	private int numero;
 	private int agencia;
 	private String titular;
-	
-	public void deposita(double valor){
+
+	public void deposita(double valor) {
 		this.saldo += valor;
 	}
-	
-	public void saca(double valor){
+
+	public void saca(double valor) throws SaldoInsuficienteException{
+		if (this.saldo < valor) {
+			throw new SaldoInsuficienteException("Saldo Insuficiente", this.saldo, valor);
+		}
 		this.saldo -= valor;
 	}
-	
-	public double getSaldo(){
+
+	public double getSaldo() {
 		return this.saldo;
 	}
 

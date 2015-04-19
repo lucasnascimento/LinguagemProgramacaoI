@@ -50,7 +50,6 @@ public class AlunoTeste {
 		System.out.println(montaMensagemDeResultado(alunoPosGraduacao));
 		System.out.println(montaMensagemDeResultado(alunoGraduacao2));
 		
-		Aluno alunoPolimofico = (Aluno) alunoPosGraduacao;
 		
 		if (aluno instanceof Aluno){
 			//É do tipo Aluno
